@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modern Store – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Shared Navbar -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">Modern Store</a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="nav-menu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="cart.html" class="nav-link cart-link">
+          Cart
+          <span id="cart-count" class="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="hero__eyebrow">New Season · New Arrivals</p>
+          <h1 class="hero__title">Timeless design for modern living.</h1>
+          <p class="hero__subtitle">
+            Shop curated furniture, lighting, and decor crafted to elevate every room in your home.
+          </p>
+          <div class="hero__actions">
+            <a href="shop.html" class="btn btn-primary btn-lg">Shop now</a>
+            <a href="#about" class="btn btn-secondary">Learn more</a>
+          </div>
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <span class="hero__stat-number">250+</span>
+              <span class="hero__stat-label">Products in stock</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-number">48h</span>
+              <span class="hero__stat-label">Fast shipping</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-number">4.9/5</span>
+              <span class="hero__stat-label">Customer rating</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero-card">
+            <h2>Living Room Essentials</h2>
+            <p>Build a calm, cozy space with our best‑selling lounge collection.</p>
+            <a href="shop.html" class="btn btn-light">Browse collection</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured products -->
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-header__title">Featured products</h2>
+          <p class="section-header__subtitle">
+            Handpicked favorites from this week’s most‑loved pieces.
+          </p>
+        </header>
+
+        <!-- Filled by home.js -->
+        <div id="featured-grid" class="product-grid"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section--alt">
+      <div class="container about">
+        <header class="section-header">
+          <h2 class="section-header__title">About Modern Store</h2>
+        </header>
+        <p class="about__text">
+          Modern Store is a boutique online retailer focused on thoughtful, design‑driven home goods.
+          We partner with independent makers and sustainable brands to bring you furniture, lighting,
+          and decor that lasts for years to come.
+        </p>
+        <p class="about__text">
+          Every product we carry is carefully vetted for quality, comfort, and aesthetics. Our goal is
+          simple: help you create a home that feels like you.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container contact">
+        <header class="section-header">
+          <h2 class="section-header__title">Contact us</h2>
+          <p class="section-header__subtitle">
+            Have a question about a product or your order? We’d love to hear from you.
+          </p>
+        </header>
+
+        <div class="contact__grid">
+          <!-- CONNECTED TO FORMSPREE -->
+          <form
+            id="contact-form"
+            class="card form-grid"
+            action="https://formspree.io/f/xwpjgwey"
+            method="POST"
+          >
+            <div class="field">
+              <label class="field__label" for="contact-name">Name</label>
+              <input
+                id="contact-name"
+                name="name"
+                type="text"
+                class="field__input"
+                placeholder="Jane Doe"
+                required
+              />
+            </div>
+            <div class="field">
+              <label class="field__label" for="contact-email">Email</label>
+              <input
+                id="contact-email"
+                name="email"
+                type="email"
+                class="field__input"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="field field--full">
+              <label class="field__label" for="contact-message">Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                class="field__textarea"
+                rows="4"
+                placeholder="How can we help?"
+                required
+              ></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Send message</button>
+            </div>
+            <p id="contact-status" class="form-status"></p>
+          </form>
+
+          <div class="card contact__info">
+            <h3>Need immediate help?</h3>
+            <p>Email us at <strong>support@modernstore.example</strong> and we’ll reply within 24 hours.</p>
+            <p>Business hours: Monday–Friday, 9:00–18:00 (CET)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Modern Store. All rights reserved.</p>
+      <p class="footer__note">Built as a demo e‑commerce experience.</p>
+    </div>
+  </footer>
+
+  <!-- Shared + page scripts -->
+  <script src="data.js"></script>
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>
