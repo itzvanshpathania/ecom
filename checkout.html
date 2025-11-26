@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modern Store – Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">Modern Store</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav-menu">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="cart.html" class="nav-link cart-link">
+          Cart
+          <span id="cart-count" class="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container checkout-layout">
+      <section>
+        <header class="section-header section-header--compact">
+          <h1 class="section-header__title">Checkout</h1>
+          <p class="section-header__subtitle">
+            Enter your details below to complete your order. No real payment will be processed.
+          </p>
+        </header>
+
+        <!-- CONNECTED TO FORMSPREE -->
+        <form
+          id="checkout-form"
+          class="card form-grid"
+          action="https://formspree.io/f/xwpjgwey"
+          method="POST"
+        >
+          <div class="field">
+            <label class="field__label" for="checkout-name">Full name</label>
+            <input
+              id="checkout-name"
+              name="name"
+              type="text"
+              class="field__input"
+              placeholder="Jane Doe"
+              required
+            />
+          </div>
+          <div class="field">
+            <label class="field__label" for="checkout-email">Email</label>
+            <input
+              id="checkout-email"
+              name="email"
+              type="email"
+              class="field__input"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div class="field field--full">
+            <label class="field__label" for="checkout-address">Address</label>
+            <input
+              id="checkout-address"
+              name="address"
+              type="text"
+              class="field__input"
+              placeholder="123 Main Street"
+              required
+            />
+          </div>
+          <div class="field">
+            <label class="field__label" for="checkout-city">City</label>
+            <input
+              id="checkout-city"
+              name="city"
+              type="text"
+              class="field__input"
+              placeholder="San Francisco"
+              required
+            />
+          </div>
+          <div class="field">
+            <label class="field__label" for="checkout-country">Country</label>
+            <input
+              id="checkout-country"
+              name="country"
+              type="text"
+              class="field__input"
+              placeholder="United States"
+              required
+            />
+          </div>
+          <div class="field field--full">
+            <label class="field__label" for="checkout-payment">Payment method</label>
+            <select id="checkout-payment" name="payment" class="field__input" required>
+              <option value="">Select a payment method</option>
+              <option value="card">Credit / Debit Card (mock)</option>
+              <option value="paypal">PayPal (mock)</option>
+              <option value="bank">Bank Transfer (mock)</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-lg">Place order</button>
+          </div>
+          <p id="checkout-status" class="form-status"></p>
+        </form>
+      </section>
+
+      <aside class="card checkout-summary" id="checkout-summary">
+        <!-- Order summary filled by checkout.js -->
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Modern Store. All rights reserved.</p>
+      <p class="footer__note">Built as a demo e‑commerce experience.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

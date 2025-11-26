@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modern Store – Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">Modern Store</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav-menu">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link nav-link--active">Shop</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="cart.html" class="nav-link cart-link">
+          Cart
+          <span id="cart-count" class="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <header class="section-header">
+        <h1 class="section-header__title">Shop all products</h1>
+        <p class="section-header__subtitle">
+          Filter by category or search by name to find exactly what you’re looking for.
+        </p>
+      </header>
+
+      <div class="shop-controls">
+        <div class="shop-controls__search">
+          <input
+            id="search-input"
+            type="search"
+            class="field__input"
+            placeholder="Search products by name…"
+          />
+        </div>
+        <div id="category-filters" class="shop-controls__filters">
+          <!-- Category chips created by shop.js -->
+        </div>
+      </div>
+
+      <div id="product-grid" class="product-grid">
+        <!-- Product cards rendered by shop.js -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Modern Store. All rights reserved.</p>
+      <p class="footer__note">Built as a demo e‑commerce experience.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>
